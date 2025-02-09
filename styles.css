@@ -1,6 +1,7 @@
+/* styles.css */
 body {
-  background-color: black;
-  color: white;
+  background-color: black; /* Latar belakang hitam untuk tampilan gelap */
+  color: white; /* Warna teks putih untuk kontras */
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
 
 h1 {
   text-align: center;
-  color: red;
+  color: red; /* Warna merah untuk judul */
 }
 
 p {
@@ -35,7 +36,7 @@ p {
 }
 
 .button:hover {
-  background-color: darkred;
+  background-color: darkred; /* Efek hover untuk tombol */
 }
 
 .card {
