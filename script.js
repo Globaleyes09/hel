@@ -1,29 +1,15 @@
-import { initializeApp } from "firebase/app";
+\import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 // Konfigurasi Firebase
 const firebaseConfig = {
- // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyD3NsDflVffHtPMkFNErjVFtdkMJPV_LRc",
-  authDomain: "global-eyes-5aed0.firebaseapp.com",
-  projectId: "global-eyes-5aed0",
-  storageBucket: "global-eyes-5aed0.firebasestorage.app",
-  messagingSenderId: "311874273981",
-  appId: "1:311874273981:web:633a16de160e67d0ca2dd4",
-  measurementId: "G-E0FN2LVX21"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 // Inisialisasi Firebase
@@ -51,12 +37,12 @@ function uploadPost() {
   }
 }
 
-// Memperbarui tampilan dashboard
+// Memperbarui tampilan dashboard dengan postingan terbaru
 function updateDashboard() {
   let postsContainer = document.getElementById('posts');
   postsContainer.innerHTML = "";
   
-  // Urutkan berdasarkan jumlah like
+  // Urutkan berdasarkan jumlah like tertinggi
   posts.sort((a, b) => b.likes - a.likes);
   posts.forEach((post, index) => {
     let postElement = document.createElement('div');
@@ -65,6 +51,7 @@ function updateDashboard() {
       <p>${post.text}</p>
       <div class="buttons">
         <button class="like-btn" onclick="likePost(${index})" ${likedPosts.has(index) ? 'disabled' : ''}>❤️ ${post.likes}</button>
+        <button class="delete-btn" onclick="deletePost(${index})">🗑️ Hapus</button>
       </div>
       <div class="comment-box">
         <input type="text" class="input-box" id="commentInput${index}" placeholder="Tulis komentar...">
@@ -87,7 +74,16 @@ function likePost(index) {
   }
 }
 
-// Fungsi untuk menambahkan komentar
+// Fungsi untuk menghapus postingan
+function deletePost(index) {
+  let confirmation = confirm("Apakah Anda yakin ingin menghapus postingan ini?");
+  if (confirmation) {
+    posts.splice(index, 1);
+    updateDashboard();
+  }
+}
+
+// Fungsi untuk menambahkan komentar ke postingan tertentu
 function addComment(index) {
   let commentInput = document.getElementById(`commentInput${index}`);
   let commentText = commentInput.value;
