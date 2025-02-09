@@ -3,6 +3,15 @@ import { getAnalytics } from "firebase/analytics";
 
 // Konfigurasi Firebase
 const firebaseConfig = {
+ // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
   apiKey: "AIzaSyD3NsDflVffHtPMkFNErjVFtdkMJPV_LRc",
   authDomain: "global-eyes-5aed0.firebaseapp.com",
   projectId: "global-eyes-5aed0",
@@ -10,6 +19,11 @@ const firebaseConfig = {
   messagingSenderId: "311874273981",
   appId: "1:311874273981:web:633a16de160e67d0ca2dd4",
   measurementId: "G-E0FN2LVX21"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 };
 
 // Inisialisasi Firebase
