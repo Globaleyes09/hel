@@ -1,4 +1,4 @@
-\import { initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 // Konfigurasi Firebase
@@ -23,7 +23,7 @@ const likedPosts = new Set(); // Set untuk menyimpan postingan yang sudah di-lik
 function uploadPost() {
   let postText = document.getElementById('postInput').value;
   
-  // Jika teks mengandung karakter terlarang, redirect ke Rick Roll
+  // Cek karakter terlarang dalam input
   if (/[<>/:]/.test(postText)) {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     return;
@@ -97,7 +97,7 @@ function addComment(index) {
 function handleSearch(event) {
   let searchValue = document.getElementById('searchBox').value;
   
-  // Jika teks mengandung karakter terlarang, redirect ke Rick Roll
+  // Cek karakter terlarang dalam input
   if (/[<>/:]/.test(searchValue)) {
     window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
     return;
