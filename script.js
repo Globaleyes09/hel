@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 
 // Konfigurasi Firebase
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID"
+  apiKey: "AIzaSyD3NsDflVffHtPMkFNErjVFtdkMJPV_LRc",
+  authDomain: "global-eyes-5aed0.firebaseapp.com",
+  projectId: "global-eyes-5aed0",
+  storageBucket: "global-eyes-5aed0.firebasestorage.app",
+  messagingSenderId: "311874273981",
+  appId: "1:311874273981:web:633a16de160e67d0ca2dd4",
+  measurementId: "G-E0FN2LVX21"
 };
 
 // Inisialisasi Firebase
