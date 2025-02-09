@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Eyes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Global Eyes</h1>
+    <p>Website ini mendukung kebebasan bicara dalam mengkritik politik dan beberapa kebebasan berbicara dengan anonymous.</p>
+    <p class="disclaimer">Disclaimer: Pengguna bertanggung jawab penuh atas konten yang mereka unggah.</p>
+    <p class="powered">Powered by ZeRotrus/RtR0 and Afifcom32</p>
+    <input type="text" class="input-box" id="searchBox" placeholder="Cari postingan..." onkeypress="handleSearch(event)">
+    <textarea class="input-box" id="postInput" placeholder="Tulis postingan..."></textarea>
+    <button class="button" onclick="uploadPost()">Upload</button>
+    <div class="dashboard" id="posts"></div>
+  </div>
+</body>
+</html>
